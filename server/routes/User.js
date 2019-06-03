@@ -2,7 +2,6 @@ const express = require("express");
 const userCtl = require("../controllers/User");
 const router = express.Router();
 
-router.get("/", userCtl.authMiddleware, (req, res) => {
-  res.send("ok");
-});
+router.post("/auth", userCtl.auth);
+router.post("/register", userCtl.register);
 module.exports = router;
