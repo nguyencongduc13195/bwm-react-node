@@ -1,8 +1,7 @@
 const express = require("express");
-const userCtl = require("../controllers/User");
+const rentalCtl = require("../controllers/Rental");
 const router = express.Router();
 
-router.get("/", userCtl.authMiddleware, (req, res) => {
-  res.send("ok");
-});
+router.get("/", rentalCtl.getRentals);
+router.get("/:id", rentalCtl.getRentalByID);
 module.exports = router;
