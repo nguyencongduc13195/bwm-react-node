@@ -1,0 +1,87 @@
+.navbar {
+  padding: 20px;
+  margin-bottom: 40px;
+  background-color: #20232a; }
+  .navbar .bwm-search {
+    height: 50px;
+    width: 300px !important; }
+  .navbar .navbar-brand {
+    margin-right: 30px;
+    font-size: 27px;
+    letter-spacing: 1px;
+    color: #61dafb !important;
+    font-weight: 500; }
+    .navbar .navbar-brand img {
+      height: 28px;
+      margin-left: -5px; }
+  .navbar .nav-item {
+    font-size: 14px; }
+  .navbar .btn-bwm-search {
+    border-color: #61dafb;
+    color: #61dafb; }
+    .navbar .btn-bwm-search:hover, .navbar .btn-bwm-search:focus, .navbar .btn-bwm-search:active {
+      background-color: transparent !important;
+      border-color: #61dafb !important;
+      color: #61dafb !important;
+      box-shadow: none; }
+  .navbar .nav-item {
+    color: #ededed; }
+  .navbar .dropdown-menu .dropdown-item {
+    font-size: 14px; }
+    .navbar .dropdown-menu .dropdown-item:active {
+      background-color: #61dafb; }
+
+#rentalListing .title {
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 20px; }
+
+#rentalListing .rental-detail-link:hover {
+  text-decoration: none; }
+
+#rentalListing .bwm-card {
+  border: none;
+  margin-bottom: 20px; }
+  #rentalListing .bwm-card .card-block {
+    padding-top: 8px; }
+    #rentalListing .bwm-card .card-block .card-subtitle {
+      margin: 0;
+      font-weight: 500;
+      font-size: 12px;
+      text-transform: uppercase; }
+    #rentalListing .bwm-card .card-block .card-title {
+      font-size: 19px;
+      margin: 3px 0;
+      color: #484848; }
+    #rentalListing .bwm-card .card-block .card-text {
+      font-size: 14px;
+      font-weight: 300;
+      color: #7e7e7e;
+      margin-bottom: 0; }
+
+.clickable:hover {
+  cursor: pointer; }
+
+.page-title {
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 20px; }
+
+.apartment {
+  color: #a72da3; }
+
+.house {
+  color: #bf1818; }
+
+.condo {
+  color: #d68000; }
+
+.btn-bwm {
+  background-color: #61dafb;
+  border-color: #61dafb;
+  color: white;
+  padding: 15px 30px;
+  font-size: 20px; }
+  .btn-bwm:hover, .btn-bwm:focus, .btn-bwm:active {
+    border-color: #61dafb !important;
+    background-color: #61dafb !important; }
