@@ -1,14 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import {isShared} from '../../../helpers';
 const RentalCard = ({ colNum, rental }) => {
   return (
     <div className={colNum}>
-      <Link className="rental-detail-link" to={`/rental/${rental.id}`}>
+      <Link className="rental-detail-link" to={`/rental/${rental._id}`}>
         <div className="card bwm-card">
           <img className="card-img-top" src={rental.image} alt={rental.title} />
           <div className="card-block">
             <h6 className={`card-subtitle ${rental.category}`}>
-              {rental.shared ? "shared" : "whole"} {rental.category} &#183;{" "}
+              {isShared(rental.shared)} {rental.category} &#183;{" "}
               {rental.city}
             </h6>
             <h4 className="card-title">{rental.description}</h4>
