@@ -1,36 +1,77 @@
-import React from "react";
-import {Link} from 'react-router-dom'
-const Header = () => {
+import React, { Fragment } from "react";
+import { Link, withRouter } from "react-router-dom";
+import { connect } from "react-redux";
+const Header = ({ auth, logOut, history }) => {
+  const handleLogout = () => {
+    logOut();
+    history.push('/rentals');
+  }
+  const renderAuthButtons = () => {
+    const { isAuth } = auth;
+    if (!isAuth) {
+      return (
+        <Fragment>
+          <Link className="nav-item nav-link active" to="/login">
+            <span>
+              Login <span className="sr-only">(current)</span>
+            </span>
+          </Link>
+          <Link className="nav-item nav-link" to="/register">
+            <span>Register</span>
+          </Link>
+        </Fragment>
+      );
+    } else {
+      return (
+        <a
+          className="nav-item nav-link clickable"
+          onClick={handleLogout}
+        >
+          Logout
+        </a>
+      );
+    }
+  };
   return (
     <nav className="navbar navbar-expand-lg navbar-dark">
-      <Link className="navbar-brand" to="/">Navbar</Link>
-      <button className="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
-          aria-expanded="false" aria-label="Toggle navigation">
-        <span className="navbar-toggler-icon"></span>
-      </button>
-      <div className="collapse navbar-collapse" id="collapsibleNavId">
-        <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
-          <li className="nav-item active">
-            <a className="nav-link" href="#">Home <span className="sr-only">(current)</span></a>
-          </li>
-          <li className="nav-item">
-            <a className="nav-link" href="#">Link</a>
-          </li>
-          <li className="nav-item dropdown">
-            <a className="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-            <div className="dropdown-menu" aria-labelledby="dropdownId">
-              <a className="dropdown-item" href="#">Action 1</a>
-              <a className="dropdown-item" href="#">Action 2</a>
-            </div>
-          </li>
-        </ul>
+      <div className="container">
+        <Link className="navbar-brand" to="/">
+          BookWithMe
+        </Link>
         <form className="form-inline my-2 my-lg-0">
-          <input className="form-control mr-sm-2" type="text" placeholder="Search"/>
-          <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          <input
+            className="form-control mr-sm-2 bwm-search"
+            type="text"
+            placeholder="Try New York"
+          />
+          <button
+            className="btn btn-outline-success my-2 my-sm-0"
+            type="submit"
+          >
+            Search
+          </button>
         </form>
+        <button
+          className="navbar-toggler d-lg-none"
+          type="button"
+          data-toggle="collapse"
+          data-target="#collapsibleNavId"
+          aria-controls="collapsibleNavId"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span className="navbar-toggler-icon" />
+        </button>
+        <div className="collapse navbar-collapse" id="collapsibleNavId">
+          <div className="navbar-nav ml-auto mt-2 mt-lg-0">
+            {renderAuthButtons()}
+          </div>
+        </div>
       </div>
     </nav>
   );
 };
-
-export default Header;
+const mapStateToProps = state => ({
+  auth: state.auth
+});
+export default withRouter(connect(mapStateToProps)(Header));
