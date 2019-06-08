@@ -1,5 +1,6 @@
 @import "variable.scss";
 @import "header/header.scss";
+@import "booking/booking.scss";
 @import "rental/rental-list.scss";
 @import "rental/rental-detail.scss";
 @import "form/form.scss";
@@ -8,7 +9,6 @@
     cursor: pointer;
   }
 }
-
 .page-title {
   font-size: 30px;
   font-weight: 700;

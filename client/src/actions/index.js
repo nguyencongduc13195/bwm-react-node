@@ -68,3 +68,10 @@ export const logOut = () => {
   AuthService.invalidateUser();
   return { type: LOG_OUT };
 };
+// bookings
+export const createBooking = booking => {
+  return axiosInstance
+    .post("/bookings", { ...booking })
+    .then(res => res.data)
+    .catch(err => Promise.reject(err.response.data.errors));
+};
