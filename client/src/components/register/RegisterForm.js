@@ -1,7 +1,7 @@
 import React from "react";
 import { Field, reduxForm } from "redux-form";
 import { renderField } from "../shared/form/BWMInput";
-import { BwmResErros } from "../shared/form/BWMResError";
+import { BwmResErrors } from "../shared/form/BWMResError";
 const RegisterForm = props => {
   const { handleSubmit, pristine, submitting, submitCb, valid, errors } = props;
   return (
@@ -41,7 +41,7 @@ const RegisterForm = props => {
       >
         Register
       </button>
-      <BwmResErros errors={errors} />
+      <BwmResErrors errors={errors} />
     </form>
   );
 };

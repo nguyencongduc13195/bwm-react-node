@@ -2,7 +2,7 @@ import React from "react";
 import { Field, reduxForm } from "redux-form";
 import { renderField } from "../shared/form/BWMInput";
 import { minLength4, required } from "../shared/form/validators";
-import { BwmResErros } from "../shared/form/BWMResError";
+import { BwmResErrors } from "../shared/form/BWMResError";
 const LoginForm = props => {
   const { handleSubmit, pristine, submitting, submitCb, valid, errors } = props;
   return (
@@ -30,7 +30,7 @@ const LoginForm = props => {
       >
         Login
       </button>
-      <BwmResErros errors={errors} />
+      <BwmResErrors errors={errors} />
     </form>
   );
 };
